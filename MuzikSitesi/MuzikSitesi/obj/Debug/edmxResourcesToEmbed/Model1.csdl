@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="muzikSitesiDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Galeri">
+    <Key>
+      <PropertyRef Name="GaleriID" />
+    </Key>
+    <Property Name="GaleriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GaleriResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResimAcıklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AktiflikDurumu" Type="Boolean" />
+    <Property Name="EklenmeTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="kullanici_id" />
+    </Key>
+    <Property Name="kullanici_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullanici_Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullanici_Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullanici_Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullanici_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aktifMi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kullaniciTuruID" Type="Int32" />
+    <NavigationProperty Name="kullaniciTuru" Relationship="Self.FK_Kullanici_kullaniciTuru" FromRole="Kullanici" ToRole="kullaniciTuru" />
+  </EntityType>
+  <EntityType Name="kullaniciTuru">
+    <Key>
+      <PropertyRef Name="kullaniciTuruID" />
+    </Key>
+    <Property Name="kullaniciTuruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullaniciTuruAD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK_Kullanici_kullaniciTuru" FromRole="kullaniciTuru" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Iletisim">
+    <Key>
+      <PropertyRef Name="iletisimID" />
+    </Key>
+    <Property Name="iletisimID" Type="Int32" Nullable="false" />
+    <Property Name="Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mesaj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ipAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Kullanici_kullaniciTuru">
+    <End Role="kullaniciTuru" Type="Self.kullaniciTuru" Multiplicity="0..1" />
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullaniciTuru">
+        <PropertyRef Name="kullaniciTuruID" />
+      </Principal>
+      <Dependent Role="Kullanici">
+        <PropertyRef Name="kullaniciTuruID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="muzikSitesiDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Galeri" EntityType="Self.Galeri" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="kullaniciTuru" EntityType="Self.kullaniciTuru" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Iletisim" EntityType="Self.Iletisim" />
+    <AssociationSet Name="FK_Kullanici_kullaniciTuru" Association="Self.FK_Kullanici_kullaniciTuru">
+      <End Role="kullaniciTuru" EntitySet="kullaniciTuru" />
+      <End Role="Kullanici" EntitySet="Kullanici" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

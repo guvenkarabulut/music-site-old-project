@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="muzikSitesiDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Galeri">
+    <Key>
+      <PropertyRef Name="GaleriID" />
+    </Key>
+    <Property Name="GaleriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GaleriResim" Type="nvarchar(max)" />
+    <Property Name="ResimAcıklama" Type="nvarchar(max)" />
+    <Property Name="AktiflikDurumu" Type="bit" />
+    <Property Name="EklenmeTarihi" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'muzikSitesiDb.dbo.Iletisim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Iletisim">
+    <Key>
+      <PropertyRef Name="iletisimID" />
+    </Key>
+    <Property Name="iletisimID" Type="int" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Eposta" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mesaj" Type="nvarchar" MaxLength="50" />
+    <Property Name="ipAdresi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="kullanici_id" />
+    </Key>
+    <Property Name="kullanici_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullanici_Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanici_Soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanici_Mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanici_Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanici_Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktifMi" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullaniciTuruID" Type="int" />
+  </EntityType>
+  <EntityType Name="kullaniciTuru">
+    <Key>
+      <PropertyRef Name="kullaniciTuruID" />
+    </Key>
+    <Property Name="kullaniciTuruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullaniciTuruAD" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Kullanici_kullaniciTuru">
+    <End Role="kullaniciTuru" Type="Self.kullaniciTuru" Multiplicity="0..1" />
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullaniciTuru">
+        <PropertyRef Name="kullaniciTuruID" />
+      </Principal>
+      <Dependent Role="Kullanici">
+        <PropertyRef Name="kullaniciTuruID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="muzikSitesiDbModelStoreContainer">
+    <EntitySet Name="Galeri" EntityType="Self.Galeri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullaniciTuru" EntityType="Self.kullaniciTuru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Iletisim" EntityType="Self.Iletisim" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Iletisim].[iletisimID] AS [iletisimID], 
+    [Iletisim].[Adi] AS [Adi], 
+    [Iletisim].[Soyadi] AS [Soyadi], 
+    [Iletisim].[Eposta] AS [Eposta], 
+    [Iletisim].[Mesaj] AS [Mesaj], 
+    [Iletisim].[ipAdresi] AS [ipAdresi]
+    FROM [dbo].[Iletisim] AS [Iletisim]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Kullanici_kullaniciTuru" Association="Self.FK_Kullanici_kullaniciTuru">
+      <End Role="kullaniciTuru" EntitySet="kullaniciTuru" />
+      <End Role="Kullanici" EntitySet="Kullanici" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

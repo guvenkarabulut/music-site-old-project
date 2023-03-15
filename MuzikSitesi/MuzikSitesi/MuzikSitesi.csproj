@@ -1,0 +1,618 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9067C914-A140-48A7-B373-C3546C9D936D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MuzikSitesi</RootNamespace>
+    <AssemblyName>MuzikSitesi</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44358</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assetss\css\ace-ie.min.css" />
+    <Content Include="assetss\css\ace-part2.min.css" />
+    <Content Include="assetss\css\ace-rtl.min.css" />
+    <Content Include="assetss\css\ace-skins.min.css" />
+    <Content Include="assetss\css\ace.min.css" />
+    <Content Include="assetss\css\bootstrap-colorpicker.min.css" />
+    <Content Include="assetss\css\bootstrap-datepicker3.min.css" />
+    <Content Include="assetss\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assetss\css\bootstrap-duallistbox.min.css" />
+    <Content Include="assetss\css\bootstrap-editable.min.css" />
+    <Content Include="assetss\css\bootstrap-multiselect.min.css" />
+    <Content Include="assetss\css\bootstrap-timepicker.min.css" />
+    <Content Include="assetss\css\bootstrap.min.css" />
+    <Content Include="assetss\css\chosen.min.css" />
+    <Content Include="assetss\css\colorbox.min.css" />
+    <Content Include="assetss\css\daterangepicker.min.css" />
+    <Content Include="assetss\css\dropzone.min.css" />
+    <Content Include="assetss\css\font-awesome.min.css" />
+    <Content Include="assetss\css\fonts.googleapis.com.css" />
+    <Content Include="assetss\css\fullcalendar.min.css" />
+    <Content Include="assetss\css\jquery-ui.custom.min.css" />
+    <Content Include="assetss\css\jquery-ui.min.css" />
+    <Content Include="assetss\css\jquery.gritter.min.css" />
+    <Content Include="assetss\css\prettify.min.css" />
+    <Content Include="assetss\css\select2.min.css" />
+    <Content Include="assetss\css\ui.jqgrid.min.css" />
+    <Content Include="assetss\font-awesome\4.5.0\css\font-awesome.min.css" />
+    <Content Include="assetss\font-awesome\4.5.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="assetss\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assetss\images\avatars\avatar.png" />
+    <Content Include="assetss\images\avatars\avatar1.png" />
+    <Content Include="assetss\images\avatars\avatar2.png" />
+    <Content Include="assetss\images\avatars\avatar3.png" />
+    <Content Include="assetss\images\avatars\avatar4.png" />
+    <Content Include="assetss\images\avatars\avatar5.png" />
+    <Content Include="assetss\images\avatars\profile-pic.jpg" />
+    <Content Include="assetss\images\avatars\user.jpg" />
+    <Content Include="assetss\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="assetss\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="assetss\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="assetss\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="assetss\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="assetss\images\email\email1.png" />
+    <Content Include="assetss\images\email\email2.png" />
+    <Content Include="assetss\images\email\email3.png" />
+    <Content Include="assetss\images\email\email4.png" />
+    <Content Include="assetss\images\gallery\image-1.jpg" />
+    <Content Include="assetss\images\gallery\image-2.jpg" />
+    <Content Include="assetss\images\gallery\image-3.jpg" />
+    <Content Include="assetss\images\gallery\image-4.jpg" />
+    <Content Include="assetss\images\gallery\image-5.jpg" />
+    <Content Include="assetss\images\gallery\image-6.jpg" />
+    <Content Include="assetss\images\gallery\thumb-1.jpg" />
+    <Content Include="assetss\images\gallery\thumb-2.jpg" />
+    <Content Include="assetss\images\gallery\thumb-3.jpg" />
+    <Content Include="assetss\images\gallery\thumb-4.jpg" />
+    <Content Include="assetss\images\gallery\thumb-5.jpg" />
+    <Content Include="assetss\images\gallery\thumb-6.jpg" />
+    <Content Include="assetss\images\placeholder\165x90.png" />
+    <Content Include="assetss\images\placeholder\255x150.png" />
+    <Content Include="assetss\images\placeholder\530x270.png" />
+    <Content Include="assetss\images\placeholder\550x280.png" />
+    <Content Include="assetss\js\ace-editable.min.js" />
+    <Content Include="assetss\js\ace-elements.min.js" />
+    <Content Include="assetss\js\ace-extra.min.js" />
+    <Content Include="assetss\js\ace.min.js" />
+    <Content Include="assetss\js\autosize.min.js" />
+    <Content Include="assetss\js\bootbox.js" />
+    <Content Include="assetss\js\bootstrap-colorpicker.min.js" />
+    <Content Include="assetss\js\bootstrap-datepicker.min.js" />
+    <Content Include="assetss\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="assetss\js\bootstrap-editable.min.js" />
+    <Content Include="assetss\js\bootstrap-markdown.min.js" />
+    <Content Include="assetss\js\bootstrap-multiselect.min.js" />
+    <Content Include="assetss\js\bootstrap-tag.min.js" />
+    <Content Include="assetss\js\bootstrap-timepicker.min.js" />
+    <Content Include="assetss\js\bootstrap-wysiwyg.min.js" />
+    <Content Include="assetss\js\bootstrap.min.js" />
+    <Content Include="assetss\js\buttons.colVis.min.js" />
+    <Content Include="assetss\js\buttons.flash.min.js" />
+    <Content Include="assetss\js\buttons.html5.min.js" />
+    <Content Include="assetss\js\buttons.print.min.js" />
+    <Content Include="assetss\js\chosen.jquery.min.js" />
+    <Content Include="assetss\js\dataTables.buttons.min.js" />
+    <Content Include="assetss\js\dataTables.select.min.js" />
+    <Content Include="assetss\js\daterangepicker.min.js" />
+    <Content Include="assetss\js\dropzone.min.js" />
+    <Content Include="assetss\js\excanvas.min.js" />
+    <Content Include="assetss\js\fullcalendar.min.js" />
+    <Content Include="assetss\js\grid.locale-en.js" />
+    <Content Include="assetss\js\holder.min.js" />
+    <Content Include="assetss\js\html5shiv.min.js" />
+    <Content Include="assetss\js\jquery-1.11.3.min.js" />
+    <Content Include="assetss\js\jquery-2.1.4.min.js" />
+    <Content Include="assetss\js\jquery-additional-methods.min.js" />
+    <Content Include="assetss\js\jquery-typeahead.js" />
+    <Content Include="assetss\js\jquery-ui.custom.min.js" />
+    <Content Include="assetss\js\jquery-ui.min.js" />
+    <Content Include="assetss\js\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="assetss\js\jquery.colorbox.min.js" />
+    <Content Include="assetss\js\jquery.dataTables.bootstrap.min.js" />
+    <Content Include="assetss\js\jquery.dataTables.min.js" />
+    <Content Include="assetss\js\jquery.easypiechart.min.js" />
+    <Content Include="assetss\js\jquery.flot.min.js" />
+    <Content Include="assetss\js\jquery.flot.pie.min.js" />
+    <Content Include="assetss\js\jquery.flot.resize.min.js" />
+    <Content Include="assetss\js\jquery.gritter.min.js" />
+    <Content Include="assetss\js\jquery.hotkeys.index.min.js" />
+    <Content Include="assetss\js\jquery.inputlimiter.min.js" />
+    <Content Include="assetss\js\jquery.jqGrid.min.js" />
+    <Content Include="assetss\js\jquery.knob.min.js" />
+    <Content Include="assetss\js\jquery.maskedinput.min.js" />
+    <Content Include="assetss\js\jquery.mobile.custom.min.js" />
+    <Content Include="assetss\js\jquery.nestable.min.js" />
+    <Content Include="assetss\js\jquery.raty.min.js" />
+    <Content Include="assetss\js\jquery.sparkline.index.min.js" />
+    <Content Include="assetss\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="assetss\js\jquery.validate.min.js" />
+    <Content Include="assetss\js\markdown.min.js" />
+    <Content Include="assetss\js\moment.min.js" />
+    <Content Include="assetss\js\prettify.min.js" />
+    <Content Include="assetss\js\respond.min.js" />
+    <Content Include="assetss\js\select2.min.js" />
+    <Content Include="assetss\js\spin.js" />
+    <Content Include="assetss\js\spinbox.min.js" />
+    <Content Include="assetss\js\tree.min.js" />
+    <Content Include="assetss\js\wizard.min.js" />
+    <Content Include="assetss\swf\flashExport.swf" />
+    <Content Include="assets\css\cs-skin-elastic.css" />
+    <Content Include="assets\css\lib\chosen\chosen-sprite%402x.png" />
+    <Content Include="assets\css\lib\chosen\chosen-sprite.png" />
+    <Content Include="assets\css\lib\chosen\chosen.css" />
+    <Content Include="assets\css\lib\chosen\chosen.min.css" />
+    <Content Include="assets\css\lib\datatable\buttons.bootstrap.min.css" />
+    <Content Include="assets\css\lib\datatable\buttons.dataTables.min.css" />
+    <Content Include="assets\css\lib\datatable\dataTables.bootstrap.min.css" />
+    <Content Include="assets\css\lib\vector-map\jqvmap.min.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\icomoon\icomoon.svg" />
+    <Content Include="assets\fonts\icomoon\index.html" />
+    <Content Include="assets\js\dashboard.js" />
+    <Content Include="assets\js\init\chartjs-init.js" />
+    <Content Include="assets\js\init\datatables-init.js" />
+    <Content Include="assets\js\init\flot-chart-init.js" />
+    <Content Include="assets\js\init\fullcalendar-init.js" />
+    <Content Include="assets\js\init\gmap-init.js" />
+    <Content Include="assets\js\init\peitychart-init.js" />
+    <Content Include="assets\js\init\vector-init.js" />
+    <Content Include="assets\js\init\weather-init.js" />
+    <Content Include="assets\js\lib\chosen\chosen.jquery.js" />
+    <Content Include="assets\js\lib\chosen\chosen.jquery.min.js" />
+    <Content Include="assets\js\lib\chosen\chosen.proto.js" />
+    <Content Include="assets\js\lib\chosen\chosen.proto.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.bootstrap.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.colVis.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.flash.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.html5.min.js" />
+    <Content Include="assets\js\lib\data-table\buttons.print.min.js" />
+    <Content Include="assets\js\lib\data-table\dataTables.bootstrap.min.js" />
+    <Content Include="assets\js\lib\data-table\dataTables.buttons.min.js" />
+    <Content Include="assets\js\lib\data-table\datatables.min.js" />
+    <Content Include="assets\js\lib\data-table\jquery-1.12.4.js" />
+    <Content Include="assets\js\lib\data-table\jquery.dataTables.min.js" />
+    <Content Include="assets\js\lib\data-table\jszip.min.js" />
+    <Content Include="assets\js\lib\data-table\pdfmake.min.js" />
+    <Content Include="assets\js\lib\data-table\vfs_fonts.js" />
+    <Content Include="assets\js\lib\gmap\gmapApi.js" />
+    <Content Include="assets\js\lib\gmap\gmaps.js" />
+    <Content Include="assets\js\lib\gmap\gmaps.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\vmap.sampledata.js" />
+    <Content Include="assets\js\widgets.js" />
+    <Content Include="assets\scss\style.css" />
+    <Content Include="css\base.css" />
+    <Content Include="css\font-awesome\css\font-awesome.css" />
+    <Content Include="css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="css\fonts.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\vendor.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="galeri.aspx" />
+    <Content Include="galeriYonetim.aspx" />
+    <Content Include="giris.aspx" />
+    <Content Include="iletisim.aspx" />
+    <Content Include="iletisimYonetim.aspx" />
+    <Content Include="images\avatars\user-01.jpg" />
+    <Content Include="images\avatars\user-02.jpg" />
+    <Content Include="images\avatars\user-03.jpg" />
+    <Content Include="images\avatars\user-04.jpg" />
+    <Content Include="images\avatars\user-05.jpg" />
+    <Content Include="images\hero-bg.jpg" />
+    <Content Include="images\icon-location%402x.png" />
+    <Content Include="images\icon-location.png" />
+    <Content Include="images\icons\icon-arrow-left-w.svg" />
+    <Content Include="images\icons\icon-arrow-left.svg" />
+    <Content Include="images\icons\icon-arrow-right-w.svg" />
+    <Content Include="images\icons\icon-arrow-right.svg" />
+    <Content Include="images\icons\icon-arrow-up.svg" />
+    <Content Include="images\icons\icon-link.svg" />
+    <Content Include="images\icons\icon-mail.svg" />
+    <Content Include="images\icons\icon-quote.svg" />
+    <Content Include="images\icons\icon-search.svg" />
+    <Content Include="images\icons\icon-video.svg" />
+    <Content Include="images\icons\png\icon-arrow-left-w.png" />
+    <Content Include="images\icons\png\icon-arrow-left.png" />
+    <Content Include="images\icons\png\icon-arrow-right-w.png" />
+    <Content Include="images\icons\png\icon-arrow-right.png" />
+    <Content Include="images\icons\png\icon-arrow-up.png" />
+    <Content Include="images\icons\png\icon-link.png" />
+    <Content Include="images\icons\png\icon-mail.png" />
+    <Content Include="images\icons\png\icon-quote.png" />
+    <Content Include="images\icons\png\icon-search.png" />
+    <Content Include="images\icons\png\icon-video.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo.svg" />
+    <Content Include="images\mejs\mejs-controls.png" />
+    <Content Include="images\mejs\mejs-controls.svg" />
+    <Content Include="images\sample-image.jpg" />
+    <Content Include="images\thumbs\about\about-1000.jpg" />
+    <Content Include="images\thumbs\about\about-2000.jpg" />
+    <Content Include="images\thumbs\about\about-500.jpg" />
+    <Content Include="images\thumbs\featured\featured-beetle.jpg" />
+    <Content Include="images\thumbs\featured\featured-guitarman.jpg" />
+    <Content Include="images\thumbs\featured\featured-watch.jpg" />
+    <Content Include="images\thumbs\masonry\beetle-400.jpg" />
+    <Content Include="images\thumbs\masonry\beetle-800.jpg" />
+    <Content Include="images\thumbs\masonry\cookies-400.jpg" />
+    <Content Include="images\thumbs\masonry\cookies-800.jpg" />
+    <Content Include="images\thumbs\masonry\fuji-400.jpg" />
+    <Content Include="images\thumbs\masonry\fuji-800.jpg" />
+    <Content Include="images\thumbs\masonry\gallery\gallery-1-400.jpg" />
+    <Content Include="images\thumbs\masonry\gallery\gallery-1-800.jpg" />
+    <Content Include="images\thumbs\masonry\gallery\gallery-2-400.jpg" />
+    <Content Include="images\thumbs\masonry\gallery\gallery-2-800.jpg" />
+    <Content Include="images\thumbs\masonry\gallery\gallery-3-400.jpg" />
+    <Content Include="images\thumbs\masonry\gallery\gallery-3-800.jpg" />
+    <Content Include="images\thumbs\masonry\guitarman-400.jpg" />
+    <Content Include="images\thumbs\masonry\guitarman-800.jpg" />
+    <Content Include="images\thumbs\masonry\jump-400.jpg" />
+    <Content Include="images\thumbs\masonry\jump-800.jpg" />
+    <Content Include="images\thumbs\masonry\lamp-400.jpg" />
+    <Content Include="images\thumbs\masonry\lamp-800.jpg" />
+    <Content Include="images\thumbs\masonry\shutterbug-400.jpg" />
+    <Content Include="images\thumbs\masonry\shutterbug-800.jpg" />
+    <Content Include="images\thumbs\masonry\sydney-400.jpg" />
+    <Content Include="images\thumbs\masonry\sydney-800.jpg" />
+    <Content Include="images\thumbs\masonry\tulips-400.jpg" />
+    <Content Include="images\thumbs\masonry\tulips-800.jpg" />
+    <Content Include="images\thumbs\masonry\wheel-400.jpg" />
+    <Content Include="images\thumbs\masonry\wheel-800.jpg" />
+    <Content Include="images\thumbs\single\audio\audio-1000.jpg" />
+    <Content Include="images\thumbs\single\audio\audio-2000.jpg" />
+    <Content Include="images\thumbs\single\audio\audio-500.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-01-1000.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-01-2000.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-01-500.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-02-1000.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-02-2000.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-02-500.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-03-1000.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-03-2000.jpg" />
+    <Content Include="images\thumbs\single\gallery\single-gallery-03-500.jpg" />
+    <Content Include="images\thumbs\single\standard\standard-1000.jpg" />
+    <Content Include="images\thumbs\single\standard\standard-2000.jpg" />
+    <Content Include="images\thumbs\single\standard\standard-500.jpg" />
+    <Content Include="images\thumbs\small\beetle-150.jpg" />
+    <Content Include="images\thumbs\small\cookies-150.jpg" />
+    <Content Include="images\thumbs\small\salad-150.jpg" />
+    <Content Include="images\thumbs\small\shutterbug-150.jpg" />
+    <Content Include="images\thumbs\small\tulips-150.jpg" />
+    <Content Include="images\thumbs\small\wheel-150.jpg" />
+    <Content Include="images\wheel-1000.jpg" />
+    <Content Include="images\wheel-2000.jpg" />
+    <Content Include="images\wheel-500.jpg" />
+    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\modernizr.js" />
+    <Content Include="js\pace.min.js" />
+    <Content Include="js\plugins.js" />
+    <Content Include="kayit.aspx" />
+    <Content Include="media\AirReview-Landmarks-02-ChasingCorporate.mp3" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="sifremiunuttum.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="galeri.aspx.cs">
+      <DependentUpon>galeri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="galeri.aspx.designer.cs">
+      <DependentUpon>galeri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Galeri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="galeriYonetim.aspx.cs">
+      <DependentUpon>galeriYonetim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="galeriYonetim.aspx.designer.cs">
+      <DependentUpon>galeriYonetim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="giris.aspx.cs">
+      <DependentUpon>giris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="giris.aspx.designer.cs">
+      <DependentUpon>giris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iletisim.aspx.cs">
+      <DependentUpon>iletisim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iletisim.aspx.designer.cs">
+      <DependentUpon>iletisim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Iletisim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="iletisimYonetim.aspx.cs">
+      <DependentUpon>iletisimYonetim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iletisimYonetim.aspx.designer.cs">
+      <DependentUpon>iletisimYonetim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kayit.aspx.cs">
+      <DependentUpon>kayit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kayit.aspx.designer.cs">
+      <DependentUpon>kayit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kullaniciTuru.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="metotlar.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sifremiunuttum.aspx.cs">
+      <DependentUpon>sifremiunuttum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sifremiunuttum.aspx.designer.cs">
+      <DependentUpon>sifremiunuttum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\librebaskerville\librebaskerville-bold-webfont.woff" />
+    <Content Include="fonts\librebaskerville\librebaskerville-bold-webfont.woff2" />
+    <Content Include="fonts\librebaskerville\librebaskerville-italic-webfont.woff" />
+    <Content Include="fonts\librebaskerville\librebaskerville-italic-webfont.woff2" />
+    <Content Include="fonts\librebaskerville\librebaskerville-regular-webfont.woff" />
+    <Content Include="fonts\librebaskerville\librebaskerville-regular-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-black-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-black-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-black-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-blackitalic-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-blackitalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-blackitalic-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-bold-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-bold-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-bold-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-bolditalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-bolditalic-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-extrabold-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-extrabold-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-extrabolditalic-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-extrabolditalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-extrabolditalic-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-extralight-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-extralight-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-extralight-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-extralightitalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-extralightitalic-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-light-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-light-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-lightitalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-lightitalic-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-medium-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-medium-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-medium-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-mediumitalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-mediumitalic-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-regular-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-regular-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-regular-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-regularitalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-regularitalic-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-semibold-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-semibold-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-semibold-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-semibolditalic-webfont.ttf" />
+    <Content Include="fonts\metropolis\metropolis-semibolditalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-semibolditalic-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-thin-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-thin-webfont.woff2" />
+    <Content Include="fonts\metropolis\metropolis-thinitalic-webfont.woff" />
+    <Content Include="fonts\metropolis\metropolis-thinitalic-webfont.woff2" />
+    <Content Include="assets\css\style.css.map" />
+    <Content Include="assets\fonts\icomoon\icomoon.eot" />
+    <Content Include="assets\fonts\icomoon\icomoon.ttf" />
+    <Content Include="assets\fonts\icomoon\icomoon.woff" />
+    <Content Include="assets\scss\style.css.map" />
+    <Content Include="assets\scss\style.scss" />
+    <Content Include="assetss\font-awesome\4.5.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="assetss\font-awesome\4.5.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assetss\font-awesome\4.5.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="assetss\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assetss\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assetss\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assetss\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assetss\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="AdminMaster.Master" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Upload\Duzenlenen\" />
+    <Folder Include="Upload\Orjinal\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50992</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44358/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
